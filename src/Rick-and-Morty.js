@@ -6,6 +6,10 @@ const Button = styled.button`
   background: ${(props) => (props.click ? "#fff" : "#000")};
   color: ${(props) => (props.click ? "#000" : "#fff")};
 `;
+const Window = styled.div`
+  background: ${(props) => (props.toggle ? "#fff" : "#000")};
+  color: ${(props) => (props.toggle ? "#000" : "#fff")};
+`;
 
 export function RickMorty() {
   const [view, setView] = useState("characters");
@@ -28,10 +32,21 @@ export function RickMorty() {
   }, [view]);
 
   const [data, setData] = useState([]);
-
+  const [toggle, setToggle] = useState("true");
   return (
-    <>
+    <Window toggle={toggle} className="window__wrap">
+      <div className="toggle">
+        <input
+          onChange={() => {
+            setToggle(!toggle);
+          }}
+          type="checkbox"
+          id="switch"
+        />
+        <label for="switch"></label>
+      </div>
       <div className="btns__selection">
+        <p>Filter By:</p>
         <Button
           click={view === "characters"}
           onClick={() => {
@@ -154,6 +169,6 @@ export function RickMorty() {
       ) : (
         <div className="loading">Loading...</div>
       )}
-    </>
+    </Window>
   );
 }

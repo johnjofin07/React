@@ -1,7 +1,66 @@
 body {
-  background: #000;
-  color: #fff;
   font-family: "Fira Code", monospace;
+  margin: 0;
+  padding: 0;
+}
+.btns__selection p {
+  margin: 0 0 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.toggle input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.toggle input:checked + label {
+  background-color: #fff;
+  background-image: url(./sun.png);
+  background-position: 10% center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.toggle label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 100px;
+  height: 50px;
+  background: #fff;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  border: solid;
+  background-image: url(./moon.png);
+  background-position: 100% center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 35px;
+  top: 15px;
+}
+
+.toggle label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+  background: #000;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.toggle input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+.toggle label:active:after {
+  width: 130px;
 }
 
 .loading {
@@ -14,7 +73,7 @@ body {
 }
 
 .card {
-  border: 3px solid #fff;
+  border: 3px solid;
   padding: 25px;
   width: 20%;
   min-width: 280px;
@@ -40,22 +99,21 @@ body {
 
 .btns__selection {
   text-align: center;
-  margin: 30px 5px;
+  margin: 5px 5px 30px;
 }
-
 .card img {
   width: 75%;
   height: 200px;
   object-fit: cover;
   object-position: center 20%;
-  border: solid 1px #fff;
+  border: solid 1px;
   padding: 10px;
   display: block;
   margin: 15px auto 0;
 }
 
 .btns__selection button {
-  border: solid #fff 3px;
+  border: solid 3px;
   padding: 15px 20px;
   margin: 5px;
   cursor: pointer;
