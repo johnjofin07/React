@@ -1,0 +1,25 @@
+.card {
+    background: lavender;
+    max-width: 200px;
+    text-align: center;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px auto;
+    border-radius: 15px;
+    border: solid 2px  purple;
+}
+.card p {
+    margin: 5px;
+    font-size: 20px;
+    font-family: cursive;
+    color: rebeccapurple;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: cornsilk;
+}

@@ -1,0 +1,73 @@
+.card button,
+.filter__btn button,
+.btns__coffee button {
+  padding: 10px 25px;
+  font-size: 16px;
+  border: unset;
+  border-radius: 30px;
+  margin: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.filter__btn {
+  position: absolute;
+  right: 40px;
+  top: 35px;
+}
+.card img {
+  object-fit: cover;
+  border-radius: 15px;
+  margin-top: 10px;
+  width: 100%;
+}
+.card h2 {
+  color: #411b00;
+  margin-bottom: 0px;
+}
+
+.card {
+    background: #ffd4b5;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.wrap__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.btns__coffee button:hover {
+  background: #411b00;
+  color: #ffd4b5;
+  cursor: pointer;
+}
+
+body {
+  background: #ffe8d3;
+}
+
+.btns__coffee {
+  padding-left: 40px;
+}
+
+.search input {
+  border-radius: 30px;
+  border: solid 2px #411b00;
+  padding: 15px;
+  font-size: 16px;
+  background: #ffd4b5;
+}
+
+.search {
+  text-align: center;
+  margin-top: 30px;
+}
