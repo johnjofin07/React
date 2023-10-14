@@ -1,5 +1,12 @@
 import { useState, useEffect } from "react";
 import "./Rick-and-Morty.css";
+import styled from "styled-components";
+
+const Button = styled.button`
+  background: ${(props) => (props.click ? "#fff" : "#000")};
+  color: ${(props) => (props.click ? "#000" : "#fff")};
+`;
+
 export function RickMorty() {
   const [view, setView] = useState("characters");
 
@@ -22,27 +29,30 @@ export function RickMorty() {
   return (
     <>
       <div className="btns__selection">
-        <button
+        <Button
+          click={view === "characters"}
           onClick={() => {
             setView("characters");
           }}
         >
           Characters
-        </button>
-        <button
+        </Button>
+        <Button
+          click={view === "episodes"}
           onClick={() => {
             setView("episodes");
           }}
         >
           Episodes
-        </button>
-        <button
+        </Button>
+        <Button
+          click={view === "locations"}
           onClick={() => {
             setView("locations");
           }}
         >
           Locations
-        </button>
+        </Button>
       </div>
 
       <div className="wrap__window">
@@ -51,31 +61,31 @@ export function RickMorty() {
               return (
                 <div className="card">
                   <p>
-                    <span>ID: </span>
+                    <span>id: </span>
                     <span>{i.id}</span>
                   </p>
                   <p>
-                    <span>NAME:</span>
+                    <span>Name:</span>
                     <span> {i.name}</span>
                   </p>
                   <p>
-                    <span>STATUS:</span>
+                    <span>Status:</span>
                     <span> {i.status}</span>
                   </p>
                   <p>
-                    <span>SPECIES: </span>
+                    <span>Species: </span>
                     <span>{i.species}</span>
                   </p>
                   <p>
-                    <span>TYPE: </span>
+                    <span>Type: </span>
                     <span>{i.type}</span>
                   </p>
                   <p>
-                    <span>GENDER: </span>
+                    <span>Gender: </span>
                     <span>{i.gender}</span>
                   </p>
                   <p>
-                    <span>ORIGIN:</span>
+                    <span>Origin:</span>
                     <span> {i.origin}</span>
                   </p>
                   <img src={i.image} alt={i.name} width={200} height={200} />
@@ -88,11 +98,26 @@ export function RickMorty() {
           ? data.map((i) => {
               return (
                 <div className="card">
-                  <div>{i.id}</div>
-                  <div>{i.name}</div>
-                  <div>{i.air_date}</div>
-                  <div>{i.episode}</div>
-                  <div>{i.season}</div>
+                  <p>
+                    <span>id: </span>
+                    <span>{i.id}</span>
+                  </p>
+                  <p>
+                    <span>Name: </span>
+                    <span>{i.name}</span>
+                  </p>
+                  <p>
+                    <span>Air Date: </span>
+                    <span>{i.air_date}</span>
+                  </p>
+                  <p>
+                    <span>Episode: </span>
+                    <span>{i.episode}</span>
+                  </p>
+                  <p>
+                    <span>Season: </span>
+                    <span>{i.season}</span>
+                  </p>
                 </div>
               );
             })
@@ -102,10 +127,22 @@ export function RickMorty() {
           ? data.map((i) => {
               return (
                 <div className="card">
-                  <div>{i.id}</div>
-                  <div>{i.name}</div>
-                  <div>{i.type}</div>
-                  <div>{i.dimension}</div>
+                  <p>
+                    <span>id: </span>
+                    <span>{i.id}</span>
+                  </p>
+                  <p>
+                    <span>Name: </span>
+                    <span>{i.name}</span>
+                  </p>
+                  <p>
+                    <span>Type: </span>
+                    <span>{i.type}</span>
+                  </p>
+                  <p>
+                    <span>Dimension: </span>
+                    <span>{i.dimension}</span>
+                  </p>
                 </div>
               );
             })
