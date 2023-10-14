@@ -5,9 +5,10 @@ body {
 }
 
 .card {
-  border: solid 3px #fff;
-  width: 20%;
+  border: 3px solid #fff;
   padding: 25px;
+  width: 20%;
+  min-width: 280px;
 }
 
 .wrap__window {
