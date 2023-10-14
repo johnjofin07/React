@@ -4,6 +4,15 @@ body {
   font-family: "Fira Code", monospace;
 }
 
+.loading {
+  height: 80vh;
+  text-align: center;
+  line-height: 80vh;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 6px;
+}
+
 .card {
   border: 3px solid #fff;
   padding: 25px;
