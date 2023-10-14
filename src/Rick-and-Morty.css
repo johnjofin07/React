@@ -1,0 +1,51 @@
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Fira Code", monospace;
+}
+
+.card {
+  border: solid 3px #fff;
+  width: 20%;
+  padding: 25px;
+}
+
+.wrap__window {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.card p {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+.btns__selection {
+  text-align: center;
+}
+
+.card img {
+  width: 75%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center 20%;
+  border: solid 1px #fff;
+  padding: 10px;
+  display: block;
+  margin: 15px auto 0;
+}
+
+.btns__selection button {
+  border: solid #fff 3px;
+  background: #000;
+  color: #fff;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  margin: 25px 5px;
+  cursor: pointer;
+}

@@ -2,12 +2,11 @@
 // import Calculator from './Calculator';
 // import { Header } from './Header'
 // import { Footer } from './Footer'
-//
-import { Coffee } from "./CoffeeList.js";
-
+// import { Coffee } from "./CoffeeList.js";
 // import { Picker } from "./Colorpicker";
+import { RickMorty } from "./Rick-and-Morty";
 
-import "./Calculator.css";
+// import "./Calculator.css";
 // import "./card.module.css";
 
 function App() {
@@ -15,16 +14,15 @@ function App() {
     <>
       {/* {arrayOfObjects.map((i) => {
         return (<Card data={i} />)
-
       })} */}
       {/* <Header />
       <Calculator />
       <Footer /> */}
       {/* <Quote/> */}
-
       {/* <Search/> */}
-      <Coffee />
+      {/* <Coffee /> */}
       {/* <Picker /> */}
+      <RickMorty/>
     </>
   );
 }

@@ -9,7 +9,7 @@ export function Quote() {
     setLoading(true);
     (async (q) => {
       const res = await fetch("https://api.quotable.io/quotes/random", {
-        mehod: "GET",
+        method: "GET",
       });
       const data = await res.json();
       setQuote(data[0]);
