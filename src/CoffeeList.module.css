@@ -26,16 +26,16 @@
 }
 
 .card {
-    background: #ffd4b5;
-    padding: 15px;
-    border-radius: 20px;
-    margin-bottom: 25px;
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
+  padding: 15px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  width: 100%;
+  max-width: 21%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
 }
 
 .wrap__card {
@@ -51,8 +51,10 @@
   cursor: pointer;
 }
 
-body {
+.wrap__coffee {
   background: #ffe8d3;
+  height: 100%;
+  min-height: 100vh;
 }
 
 .btns__coffee {
@@ -69,5 +71,5 @@ body {
 
 .search {
   text-align: center;
-  margin-top: 30px;
+  padding-top: 30px;
 }

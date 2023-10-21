@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./CoffeeList.css";
+import styles from "./CoffeeList.module.css";
 
 import styled from "styled-components";
 
@@ -69,11 +69,11 @@ export function Coffee() {
   };
 
   return (
-    <>
-      <div className="search">
+    <div className={styles.wrap__coffee}>
+      <div className={styles.search}>
         <input type="text" placeholder="search name" onChange={handleSearch} />
       </div>
-      <div className="btns__coffee">
+      <div className={styles.btns__coffee}>
         <Button
           selected={search === "Coffee"}
           onClick={() => {
@@ -99,7 +99,7 @@ export function Coffee() {
           Milk
         </Button>
       </div>
-      <div className="filter__btn">
+      <div className={styles.filter__btn}>
         <FilterButton
           active={view === "filtered"}
           onClick={() => {
@@ -118,14 +118,14 @@ export function Coffee() {
         </FilterButton>
       </div>
       {view === "filtered" ? (
-        <div className="wrap__card">
+        <div className={styles.wrap__card}>
           {result
             .filter((i) => {
               return i.selection === true;
             })
             .map((i) => {
               return (
-                <Card CardFocus={i.selection === true} className="card">
+                <Card CardFocus={i.selection === true} className={styles.card}>
                   <img src={i.image} alt={i.title} width={300} height={350} />
 
                   <h2> {i.title}</h2>
@@ -143,14 +143,14 @@ export function Coffee() {
             })}{" "}
         </div>
       ) : (
-        <div className="wrap__card">
+        <div className={styles.wrap__card}>
           {result
             .filter((c) => {
               return c.ingredients.includes(search);
             })
             .map((i) => {
               return (
-                <Card CardFocus={i.selection === true} className="card">
+                <Card CardFocus={i.selection === true} className={styles.card}>
                   <img src={i.image} alt={i.title} width={300} height={350} />
 
                   <h2> {i.title}</h2>
@@ -168,6 +168,6 @@ export function Coffee() {
             })}
         </div>
       )}
-    </>
+    </div>
   );
 }
