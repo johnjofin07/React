@@ -1,0 +1,45 @@
+.wrap__dictionary {
+  font-family: "Fira Code", monospace;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+}
+
+.wrap__input {
+  text-align: center;
+}
+
+.card {
+  border: 3px solid;
+  padding: 25px;
+  width: 20%;
+  min-width: 400px;
+  margin: 15px auto;
+}
+
+.btn__search,
+.wrap__dictionary input {
+  border: solid 3px;
+  padding: 15px 20px;
+  margin: 5px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  font-size: 12px;
+}
+
+.btn__search {
+  background: #888;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.wrap__dictionary input {
+  color: #000;
+  min-width: 250px;
+}

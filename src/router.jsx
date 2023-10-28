@@ -8,7 +8,9 @@ import { Calculator } from "./Calculator";
 import { Login } from "./Signup";
 import { Loginapi } from "./Loginapi";
 import FormikBasic from "./FormikLogin";
-
+import { Dictionary } from "./Dictionary";
+import { Success } from "./success-form";
+import { Fail } from "./fail-form";
 const router = createBrowserRouter([
   {
     path: "/rick-morty",
@@ -52,6 +54,19 @@ const router = createBrowserRouter([
   {
     path: "/form",
     element: <FormikBasic />,
+  },
+
+  {
+    path: "/dictionary",
+    element: <Dictionary />,
+  },
+  {
+    path: "/success",
+    element: <Success />,
+  },
+  {
+    path: "/fail",
+    element: <Success />,
   },
 ]);
 

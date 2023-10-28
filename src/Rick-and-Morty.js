@@ -16,6 +16,7 @@ export function RickMorty() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [toggle, setToggle] = useState(false);
+  const [init, setInit] = useState([]);
   useEffect(() => {
     async function fetchData() {
       setLoading(false);
@@ -28,6 +29,7 @@ export function RickMorty() {
       const fetchData = await res.json();
       setLoading(true);
       setData(fetchData);
+      setInit(fetchData);
     }
     fetchData();
   }, [view]);
@@ -38,126 +40,30 @@ export function RickMorty() {
   }, []);
 
   const handleSearch = (e) => {
-    data
-      .filter((i) => {
-        return i.name.toLowerCase().includes(e.target.value.toLowerCase());
-      })
-      .map((i) => {
+    if (!e.target.value) {
+      setData(init);
+    } else {
+      const searchOut = data.filter((i) => {
         return (
-          <>
-            {loading ? (
-              <div className={styles.wrap__window}>
-                {view === "characters"
-                  ? data.map((i) => {
-                      return (
-                        <div className={styles.card}>
-                          <p>
-                            <span>id: </span>
-                            <span>{i.id}</span>
-                          </p>
-                          <p>
-                            <span>Name:</span>
-                            <span> {i.name}</span>
-                          </p>
-                          <p>
-                            <span>Status:</span>
-                            <span> {i.status}</span>
-                          </p>
-                          <p>
-                            <span>Species: </span>
-                            <span>{i.species}</span>
-                          </p>
-                          <p>
-                            <span>Type: </span>
-                            <span>{i.type}</span>
-                          </p>
-                          <p>
-                            <span>Gender: </span>
-                            <span>{i.gender}</span>
-                          </p>
-                          <p>
-                            <span>Origin:</span>
-                            <span> {i.origin}</span>
-                          </p>
-                          <img
-                            src={i.image}
-                            alt={i.name}
-                            width={200}
-                            height={200}
-                          />
-                        </div>
-                      );
-                    })
-                  : null}
-
-                {view === "episodes"
-                  ? data.map((i) => {
-                      return (
-                        <div className={styles.card}>
-                          <p>
-                            <span>id: </span>
-                            <span>{i.id}</span>
-                          </p>
-                          <p>
-                            <span>Name: </span>
-                            <span>{i.name}</span>
-                          </p>
-                          <p>
-                            <span>Air Date: </span>
-                            <span>{i.air_date}</span>
-                          </p>
-                          <p>
-                            <span>Episode: </span>
-                            <span>{i.episode}</span>
-                          </p>
-                          <p>
-                            <span>Season: </span>
-                            <span>{i.season}</span>
-                          </p>
-                        </div>
-                      );
-                    })
-                  : null}
-
-                {view === "locations"
-                  ? data.map((i) => {
-                      return (
-                        <div className={styles.card}>
-                          <p>
-                            <span>id: </span>
-                            <span>{i.id}</span>
-                          </p>
-                          <p>
-                            <span>Name: </span>
-                            <span>{i.name}</span>
-                          </p>
-                          <p>
-                            <span>Type: </span>
-                            <span>{i.type}</span>
-                          </p>
-                          <p>
-                            <span>Dimension: </span>
-                            <span>{i.dimension}</span>
-                          </p>
-                        </div>
-                      );
-                    })
-                  : null}
-              </div>
-            ) : (
-              <div className={styles.loading}>Loading...</div>
-            )}
-          </>
+          i.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
+          i.status.toLowerCase().includes(e.target.value.toLowerCase()) ||
+          i.origin.toLowerCase().includes(e.target.value.toLowerCase()) ||
+          i.gender.toLowerCase().includes(e.target.value.toLowerCase()) ||
+          i.type.toLowerCase().includes(e.target.value.toLowerCase()) ||
+          i.species.toLowerCase().includes(e.target.value.toLowerCase())
         );
       });
+      setData(searchOut);
+    }
   };
+
   return (
     <Window toggle={toggle} className={styles.window__wrap}>
       <input
         className={styles.search}
         onChange={handleSearch}
         type="text"
-        placeholder="Search Name"
+        placeholder="Search"
       />
       <div className={styles.toggle}>
         <input

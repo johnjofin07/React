@@ -2,6 +2,8 @@ body {
   font-family: "Fira Code", monospace;
   margin: 0;
   padding: 0;
+
+  background: #000;
 }
 .btns__selection p {
   margin: 0 0 10px;
@@ -136,13 +138,12 @@ body {
   margin: 10px;
 }
 
-
-@media (min-width: 998px) {
+@media (min-width: 480px) {
   .btns__selection {
     margin: 5px 5px 30px;
   }
 }
-@media (max-width: 998px) {
+@media (max-width: 480px) {
   .toggle label:after {
     width: 25px;
     height: 25px;
@@ -152,5 +153,13 @@ body {
   .toggle label {
     width: 65px;
     height: 30px;
+    top: 70px;
+    right: 15px;
   }
+
+  .search {
+
+    margin: 10px auto;
+    display: block;
+}
 }
